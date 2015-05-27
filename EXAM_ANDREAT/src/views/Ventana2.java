@@ -48,9 +48,7 @@ public class Ventana2 extends JPanel {
 		comboBox = new JComboBox();
 		comboBox.setBounds(28, 61, 112, 20);
 		add(comboBox);
-		for (int i=0;i<datos.size();i++){
-		//comboBox.addItem(datos.get("equipo"));
-		}
+		
 		
 		//Etiquetas
 		Equipo = new JLabel("Equipo");
@@ -112,7 +110,7 @@ public class Ventana2 extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ventana v = new ventana(panel);
+				ventana v = new ventana(null);
 				panel.add(v, "v");
 				CardLayout layout = (CardLayout) panel.getLayout();
 				layout.show(panel, "v");
@@ -135,5 +133,15 @@ public class Ventana2 extends JPanel {
 				
 			}
 		});
+	}
+	
+	public void cargarDatos(ArrayList<String> u){
+		for (int i=0; i<u.size();i++){
+			ComboBox.addItem(u.get(i));
+		}
+	}
+
+	public JComboBox getComboBox() {
+		return comboBox;
 	}
 }

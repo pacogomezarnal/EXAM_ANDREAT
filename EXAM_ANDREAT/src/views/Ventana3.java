@@ -11,13 +11,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Ventana3 extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField cajaId;
+	private JTextField CajaApellido;
+	private JTextField CajaComprobar;
 	private JButton bontonAtras;
-	private JButton btnComprobar;
-	private JLabel lblerApellido;
-	private JLabel lblId;
+	private JButton Comprobar;
+	private JLabel erApellido;
+	private JLabel Id;
 
 	/**
 	 * Create the panel.
@@ -26,44 +26,51 @@ public class Ventana3 extends JPanel {
 		setBackground(new Color(230, 230, 250));
 		setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(24, 50, 60, 20);
-		add(textField);
-		textField.setColumns(10);
+		//Cajas de texto
+		cajaId = new JTextField();
+		cajaId.setBounds(24, 50, 60, 20);
+		add(cajaId);
+		cajaId.setColumns(10);
 		
-		lblId = new JLabel("Id");
-		lblId.setBounds(24, 25, 46, 14);
-		add(lblId);
+		CajaApellido = new JTextField();
+		CajaApellido.setBounds(132, 50, 100, 20);
+		add(CajaApellido);
+		CajaApellido.setColumns(10);
 		
-		lblerApellido = new JLabel("1er Apellido");
-		lblerApellido.setBounds(132, 25, 80, 14);
-		add(lblerApellido);
+		CajaComprobar = new JTextField();
+		CajaComprobar.setBounds(24, 188, 397, 20);
+		add(CajaComprobar);
+		CajaComprobar.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(132, 50, 100, 20);
-		add(textField_1);
-		textField_1.setColumns(10);
 		
-		btnComprobar = new JButton("COMPROBAR");
-		btnComprobar.setBounds(24, 123, 397, 23);
-		add(btnComprobar);
+		//Etiquetas
+		Id = new JLabel("Id");
+		Id.setBounds(24, 25, 46, 14);
+		add(Id);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(24, 188, 397, 20);
-		add(textField_2);
-		textField_2.setColumns(10);
+		erApellido = new JLabel("1er Apellido");
+		erApellido.setBounds(132, 25, 100, 14);
+		add(erApellido);
+		
+		
+		
+		//Boton comprobar y atras
+		Comprobar = new JButton("COMPROBAR");
+		Comprobar.setBounds(24, 123, 397, 23);
+		add(Comprobar);
+
 		
 		bontonAtras = new JButton("< < Atr\u00E1s");
-		bontonAtras.setBounds(24, 320, 115, 23);
+		bontonAtras.setBounds(24, 320, 131, 23);
 		add(bontonAtras);
 		bontonAtras.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ventana v1=new ventana(null);
-				panel.add(v1, "v1");
+				Ventana2 v2=new Ventana2(null);
+				panel.add(v2, "v2");
 				CardLayout layout = (CardLayout) panel.getLayout();
-				layout.show(panel, "v1");
+				layout.show(panel, "v2");
 				
 			}
 		});
